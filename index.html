@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Farmer's Registration form</title>
+</head>
+<body>
+    <?php
+    $firstNameErr="";
+    $middleNameErr="";
+    firstName=""
+
+    if($_SERVER["REQUEST_METHOD"]=="POST")
+    {
+        if(empty($_POST["firstname"]))
+        {
+            $firstNameErr="Name Field is required";
+        }else
+        {
+            $firstName=test_input($_POST["firstname"]);
+            if(!preg_match("/^[a-zA-Z-']*$/",$firstName))
+            {
+                firstNameErr="Only letters and white space allowed";
+            }
+        }
+    }
+
+    ?>
+        </div class="container">
+             <form action="php/form.php" method="POST">
+                <div><h1>Farmer's Registration Form</h1></div>
+                <hr>
+                    <div class="box-details">
+                        <div class="box-1">
+                            <label for="firstname">First Name</label><br>
+                            <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br>
+                        </div>
+                        <div  class="box-2">
+                            <label for="middlename">Middle Name</label><br>
+                            <input type="text" id="middlename" name="middlename" placeholder="Middle Name" required><br>
+                        </div>
+                        <div class="box-3">
+                            <label for="surname">SurName</label><br>
+                            <input type="text" id="surname" name="surname" placeholder="SurName" required><br>
+                        </div>
+                        <div class="box-4">
+                            <label for="gender">Gender</label><br>
+                            <input type="radio" id="male" name="gender" value="Male" checked>
+                            <label for="male">Male</label><br>
+                            <input type="radio" id="female" name="gender" value="Female" checked>
+                            <label for="female">Female</label><br>
+                        </div>
+                        <div class="box-5">
+                            <label for="birthdate">Date of Birth</label><br>
+                            <input type="date" id="birthdate" name="birthdate" required><br>
+                        </div>
+                        <div class="box-6">
+                           <label for="address">Physical Address</label><br>
+                            <input type="text" id="address" name="address" placeholder="Physical Address" required><br> 
+                        </div>
+                        <div class="box-7">
+                           <label for="phone">Phone Number</label><br>
+                            <input type="number" id="phone" name="phone" placeholder="Phone NUmber" required><br>
+                        </div>
+                        <div class="box-8">
+                            <label for="region">Region</label><br>
+                            <input type="text" id="region" name="region" placeholder="Region" required><br>
+                        </div>
+                         <div class="box-9">
+                            <label for="municipal">Municipal</label><br>
+                            <input type="text" id="municipal" name="municipal" placeholder="Municipal" required><br>
+                        </div>
+                        <div class="box-10">
+                            <label for="village">Village(optinal)</label><br>
+                            <input type="text" id="village" name="village" placeholder="Village" required><br>
+                        </div>
+                        <div class="box-11">
+                            <label for="ward">Ward(optional)</label><br>
+                            <input type="ward" id="ward" name="ward" placeholder="Ward" required><br>
+                        </div>
+                        <div class="box-12">
+                            <label for="farmsize">Farm Size<span>(Meters)</span></label><br>
+                             <input type="number" id="farmsize" name="farmsize" placeholder="Farm Size" required><br> 
+                        </div>
+                        <div class="box-13">
+                            <label for="ownership">Ownership</label><br>
+                            <select id="ownership" name="ownership" required>
+                            <option value="own">Own</option>
+                            <option value="hired">Hired</option>
+                            </select><br>
+                        </div>
+                        <div class="box-14">
+                          <label for="gcrops">Group of crops</label><br>
+                         <input type="text" id="gcrops" name="gcrops" placeholder="Group of Crops" required><br>
+                        </div>
+                        <div class="box-15">
+                          <label for="subcrops">Subgroup of crops</label><br>
+                         <input type="text" id="subcrops" name="subcrops" placeholder="Subgroup of Crops" required><br>
+                        </div>
+                        <div class="box-16">
+                            <input type="submit" value="Submit" class="registerbtn">
+                            <br>
+                        </div>
+                    </div>
+              </form>
+    </div>
+</body>
+</html>
